@@ -1,0 +1,95 @@
+<html>
+    <head>
+        <meta http-equiv="content-type" content="text/html;charset=utf-8">
+        <meta charset="htf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="home.css">
+        <title>KSLU</title>
+        <script>
+            function openForm() {
+                document.getElementById("myForm").style.display = "block";
+            }
+
+            function closeForm() {
+                document.getElementById("myForm").style.display = "none";
+            }
+
+            function sendMail(theForm){
+                var student = document.getElementById("student").value
+                // var college = document.getElementById("college").value
+                var year = document.getElementById("year").value
+                window.location.href="mailto:dlebci@gmail.com?subject=Bringing to notice the anti student actions of KSLU and to take adequate measures to ensure alternate method of evaluation other than offline exam for students&body=\
+From,%0D%0A\
+Name of Student: " + student + "%0D%0A" +
+"Current Semester: " + year + "%0D%0A%0D%0A" + 
+"To,%0D%0A\
+The Joint Secretary%0D%0A\
+SWRO, UGC%0D%0A%0D%0A\
+Dear Sir/Madam, %0D%0A%0D%0A\
+I am a student of KSLU and I wish to call your attention to the travesty that KSLU is inflicting on its students, in contravention to the UGC's statutory mandate. Not only has the university deliberately ignored UGC guidelines governing the conduct of exams by conducting wholly offline exams but also impudently defends its impugned actions. KSLU has not abided by the UGC and Supreme Court order of finishing final year exams by September 2020 and did not ask for an extension also. KSLU has also not completed any form of evaluation for even the previous semester of its Intermediate year students of 106 colleges. KSLU is adamant on conducting offline exams only even after students voicing their dissent for 6 months now. Thousands of mails and calls have been made to KSLU and even now KSLU has not replied to a single query of the students. There are no hostel facilities nor any help forthcoming in terms of stay either, with the length of the exams spanning a 20 day period. The expenses with job losses and salary cuts in COVID times is rather debilitating and yet, the university did not even accept pleas for deferred exam fees or discounted exam fees. Intermediate students are being forced to write offline papers for nearly three semesters within a short span, which speaks of the failure of the university to adapt to the need of the hour and conduct timely evaluations as per the academic calendar. I call upon the UGC to take legal recourse against the rogue university for the benefit of the students. %0D%0A%0D%0A\
+I have watched silently as national regulators like the UGC and BCI have watched students suffer in silence, cushioned by government jobs and secured facilities.All grievances on the UGC's portal remains unaddressed and open, for the university has not appointed a nodal officer. It is a joke that the UGC operates a grievance portal for students where the students get no response and only apathy. Despite the strict guidelines enforced by the Supreme Court, it amazes me that KSLU has neither applied nor received sanction for extension of deadline, while students lost their academic year. I urge you to direct KSLU to implement the letter and spirit of the UGC circular for welfare of students and conduct alternate method of evaluation other than physical offline exam for students.%0D%0A%0D%0A\
+There is a huge mental and physical and financial and inhuman torture and strain imposed on students and parents because of the delay and troubles caused by Karnataka State Law University.%0D%0A%0D%0A\
+I urge you to act now before KSLU wreaks further havoc.%0D%0A%0D%0A\
+Best,%0D%0A" + student
+            }
+        </script>
+    </head>
+    <body>
+        <img id="logo" src="assets/image.jpeg">
+        <div class="form-popup" id="myForm">
+            <form action="javascript:;" onSubmit="sendMail(this)" class="form-container">
+              <h1>Details</h1>
+          
+              <label for="Name of Student"><b>Name of Student/ ವಿದ್ಯಾರ್ಥಿಯ ಹೆಸರು</b></label>
+              <input type="text" placeholder="Enter Name of the Student" name="student" id="student" required>
+          
+              <!-- <label for="Name of College"><b>Name of the College/ ಕಾಲೇಜಿನ ಹೆಸರು</b></label>
+              <input type="text" placeholder="Enter Name of the College" name="college" id="college" required> -->
+          
+              <label for="Year of Study"><b>Current Semester/ ಪ್ರಸ್ತುತ ಸೆಮಿಸ್ಟರ್</b></label>
+              <input type="number" placeholder="Enter Current Semester" name="year" id="year" required>
+
+              <button type="submit" class="btn">Send Email</button>
+              <button type="submit" class="btn cancel" onclick="closeForm()">Close</button>
+            </form>
+        </div>
+        <button class="link" onclick="openForm()">Send Mail</button>
+        <!-- The core Firebase JS SDK is always required and must be listed first -->
+        <!-- <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-app.js"></script> -->
+
+        <!-- TODO: Add SDKs for Firebase products that you want to use
+            https://firebase.google.com/docs/web/setup#available-libraries -->
+        <!-- <script src="https://www.gstatic.com/firebasejs/8.0.1/firebase-analytics.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-database.js"></script>
+        <script src="https://www.gstatic.com/firebasejs/8.0.0/firebase-firestore.js"></script>
+        <script>
+        // Your web app's Firebase configuration
+        // For Firebase JS SDK v7.20.0 and later, measurementId is optional
+        var firebaseConfig = {
+            apiKey: "AIzaSyDLVUmJxLCnEDCH6IaBUvjsVu1q-BGlRoc",
+            authDomain: "kslu-f259d.firebaseapp.com",
+            databaseURL: "https://kslu-f259d.firebaseio.com",
+            projectId: "kslu-f259d",
+            storageBucket: "kslu-f259d.appspot.com",
+            messagingSenderId: "390114855183",
+            appId: "1:390114855183:web:8aeb36475feb86b9efd67a",
+            measurementId: "G-T5B1QG0HZX"
+        };
+        // Initialize Firebase
+        firebase.initializeApp(firebaseConfig);
+        firebase.analytics();
+        
+        </script>
+
+        <script>
+            function clickCounter() {
+                var database = firebase.database();
+                var ref = database.ref('count/value');
+                ref.transaction(function(currentClicks) {
+                // If node/clicks has never been set, currentRank will be `null`.
+                return (currentClicks || 0) + 1;
+                });
+            }
+        </script> -->
+    </body>
+</html>
